@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.darwinsys.cjp</groupId>
+		<artifactId>group-parent</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<groupId>com.darwinsys.cjp</groupId>
+	<artifactId>cjp-general</artifactId>
+	<packaging>jar</packaging>
+	<inceptionYear>2007</inceptionYear>
+
+	<name>Checking Java Programs - general demos</name>
+	<description>
+		Main examples from Ian's 2007 book Checking Java Programs,
+		updated for the 2015 video series of the same name.
+	</description>
+
+	<dependencies>
+
+		<!-- JUnit 4.x is in parent pom -->
+
+		<!-- Hamcrest -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>java-hamcrest</artifactId>
+			<version>2.0.0.0</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- EqualsVerifier -->
+		<dependency>
+			<groupId>nl.jqno.equalsverifier</groupId>
+			<artifactId>equalsverifier</artifactId>
+			<version>3.10</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>
