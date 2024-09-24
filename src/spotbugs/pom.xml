@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.darwinsys.cjp</groupId>
+		<artifactId>group-parent</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.darwinsys.cjp</groupId>
+	<artifactId>cjp-spotbugs</artifactId>
+	<packaging>jar</packaging>
+	<inceptionYear>2007</inceptionYear>
+
+	<name>Checking Java Programs - spotbugs examples</name>
+	<description>
+		SpotBugs (fork of FindBugs) Examples from Ian's 2007 book Checking Java Programs,
+		updated for the 2015 video series of the same name.
+	</description>
+
+	<dependencies>
+
+		<!-- FINDBUGS -->
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>findbugs</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<!-- JUnit 4.x is in parent pom -->
+
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>java-hamcrest</artifactId>
+			<version>2.0.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${maven.findbugs.version}</version>
+				<configuration>
+					<xmlOutput>false</xmlOutput>
+					<!-- <excludeFilterFile>src/main/resources/MyFindBugsExcludes.xml</excludeFilterFile> -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${maven.findbugs.version}</version>
+			</plugin>
+		</plugins>
+	</reporting>
+
+</project>

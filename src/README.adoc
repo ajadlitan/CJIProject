@@ -1,0 +1,86 @@
+= CJP-Examples: files for _Checking Java Programs_
+
+I've been an advocate of advanced techniques and strong testing for most of my life as a software developer.
+This repository was first set up in 2007 (in CVS; moved to GitHub in 2015).
+It was originally built with Ant but has mostly been moved to Maven to simplify classpath.
+Classpath is also the reason I chose to split this repo into
+*multiple projects*, each an Eclipse project and a Maven-buildable project.
+Otherwise the classpath (and the Maven pom file) would become overly large.
+
+This repo has been used as examples in:
+
+* The 2007 book Checking Java Programs;
+* The 2015 Video Series.
+* The forthcoming 2022 book Checking Java Programs.
+
+Everything that is enabled as a module builds and passes its tests;
+the other modules do not pass at the moment: patches welcome; complaints, not so much.
+A few parts of this will indeed likely stay on Ant because
+one or two of the tools are only available as Ant plugins.
+While I do know about the maven-ant-plugin, it's still just easier this way.
+
+Note that at present the JDK level is set to 11 and will soon move to 17.
+Several modules don't work on Java 11 because of the well-known restrictions on the Reflection API,
+but have been kludged around with the common workaround:
+
+	--add-opens java.base/java.lang=ALL-UNNAMED
+
+There are several main directories:
+
+. _general_ is the catch-all containing various demos
+. _arquillian_ - arquillian is a server-side web component tester from JBoss
+. _coverage_ shows test coverage using https://cobertura.github.io/cobertura/[Cobertura]
+. _cucumber_ shows a bit of the tech used in Behaviour-Driven Development
+. _fbmining_ - Not a Maven module - post-processing of findbugs (now spotbugs) results
+. _jpf_ - not yet updated, contains https://github.com/javapathfinder/[Java PathFinder] examples
+. _junit4_ contains JUnit 4 examples
+. _junit5_ contains JUnit 5 examples
+. _mockery_ contains mock-object (mockito and powermock)
+. _pmd_ contains some examples of PMD
+. _spock_ contains the https://spockframework.org[Spock framework] examples;
+. _spotbugs_ contains some examples of https://spotbugs.github.io/[SpotBugs], the follow-on project to FindBugs
+. _static_ - static code analysis.
+. _web_ - some general web tests
+. _webtest-canoo_ - the Canoo web test framework
+
+Of these, the current list of broken directories is:
+jpf, webtest-canoo.
+Plus, the arquillian folder has a race condition that only manifests on some platforms,
+and I've not yet tracked down if it's in my code or the framework.
+And, the web folder has two tests disabled due to dependency issues.
+Sigh.
+
+== JPF: Java PathFinder
+
+JavaPathFinder (JPF) is a really nice set of tools for examine state modelling of your Java code.
+It was created at NASA to verify the software used in the Mars Rover control program 
+(not the embedded software in the device, but the ground-based controller software).
+Unfortunately, it has never been easy to get started with, nor has it made the leap from
+Ant to Maven.
+JPF seemed for a while like _abandonware_, but has been revived and is being modernized
+and even expanded.
+
+== Attention Users of the 2007 Book Version
+
+The head commit of the master branch  will be totally wrong for you if you try to follow
+the directions in the 2007 edition of the book. If you still want to follow a
+decade-old book you should only have to do `git checkout a1ad04` after cloning the git repo.
+
+When you install that version YOU WILL HAVE TO SET some Eclipse variables
+before it will work! This is expected. Emails asking why it doesn't
+work out of the box when you haven't read this file are probably going
+to be ignored, but you won't know that if you didn't read
+this file; that's why it's called a README file, I suppose.
+The details are in the 2007 book.
+
+== Contact
+
+Thanks for reading/watching my book and/or my video series.
+
+Ian Darwin
+
+http://cjp.darwinsys.com/[Book website]
+
+http://shop.oreilly.com/product/0636920042723.do[Java Testing for Developers], videocast Learning Path
+
+http://shop.oreilly.com/product/9780596510237.do[Order the 2007 book from O'Reilly]

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.darwinsys.cjp</groupId>
+		<artifactId>group-parent</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<groupId>com.darwinsys</groupId>
+	<artifactId>cjp-web-demos</artifactId>
+	<packaging>jar</packaging>
+	<inceptionYear>2016</inceptionYear>
+
+	<properties>
+		<htmlunit.version>3.7.0</htmlunit.version>
+	</properties>
+
+	<name>Checking Java Programs - Mocking examples</name>
+	<description>
+		Web examples from CJP
+	</description>
+
+	<dependencies>
+		<!-- JUnit 4.x is in parent pom -->
+
+		<!-- Selenium WebDriver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${webdriver.version}</version>
+		</dependency>
+
+		<!-- HtmlUnit -->
+		<dependency>
+			<groupId>org.htmlunit</groupId>
+			<artifactId>htmlunit3-android</artifactId>
+			<version>${htmlunit.version}</version>
+		</dependency>
+
+		<!-- PageUnit -->
+		<dependency>
+			<groupId>com.darwinsys</groupId>
+			<artifactId>pageunit</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+	<plugins>
+		<!-- None yet -->
+	</plugins>
+	</build>
+
+</project>
